@@ -5,7 +5,6 @@ export default function Header() {
   <View style={styles.container}>
     <Text style={styles.lightHeader}>Select your</Text>
     <Text style={styles.boldHeader}>Favourite Rescue!</Text>
-    
   </View>
   
   )

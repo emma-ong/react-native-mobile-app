@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, TextInput } from "react-native" 
 import { FontAwesome } from "@expo/vector-icons"
-import { elevation } from "./common/styles"
+import { elevation } from "../common/styles"
 
 export default function Search() {
   return (
