@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 50,
     marginVertical: 15,
-    marginHorizontal: 25,
+    marginHorizontal: 18,
     // backgroundColor: "rgb(241,186,87)",
     backgroundColor: "white",
     alignItems: "center",
@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   header: {
+    textAlign: "center",
     fontWeight: "bold"
   }
 })

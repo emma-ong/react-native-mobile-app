@@ -20,19 +20,43 @@
 // });
 
 import { StatusBar } from "expo-status-bar"
-import { View, Text, StyleSheet } from "react-native"
+import { View, Text, StyleSheet, FlatList } from "react-native"
 import Header from "./src/components/Header"
 import Search from "./src/components/Search"
 import CategoryItem from "./src/components/CategoryItem"
+
+const commonCategories = [
+  {
+    name: "Shelters",
+    imageUrl: require("./src/assets/images/shelter.png")
+  },
+  {
+    name: "Pet Cafes",
+    imageUrl: require("./src/assets/images/cafe.png")
+  },
+  {
+    name: "Other",
+    imageUrl: require("./src/assets/images/other.png")
+  },
+]
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Header />
       <Search />
-      <CategoryItem name="Shelters" imageUrl={require("./src/assets/images/shelter.png")}/>
-      <CategoryItem name="Cafes" imageUrl={require("./src/assets/images/cafe.png")}/>
-      <CategoryItem name="Other" imageUrl={require("./src/assets/images/other.png")}/>
+      {/* <CategoryItem name="Shelters" imageUrl={require("./src/assets/images/shelter.png")}/> */}
+      <FlatList 
+        data={commonCategories}
+        renderItem={({item})=>{
+          return(
+            <CategoryItem name={item.name} imageUrl={item.imageUrl}/>
+          )
+        }}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={(category)=> category.name}
+      />
       <StatusBar />
     </View>
   )
