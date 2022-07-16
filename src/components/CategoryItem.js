@@ -1,13 +1,13 @@
 import { Text, View, StyleSheet, Image } from "react-native" 
 import { elevation } from "../common/styles"
 
-export default function CategoryItem() {
+export default function CategoryItem({name, imageUrl}) {
   return(
     <View style={[styles.container, styles.elevation]}>
       <View style={styles.imageContainer}>
-      <Image style={styles.image} source={require("../assets/images/shelter.png")}/>
+      <Image source={imageUrl} style={styles.image} />
       </View>
-      <Text style={styles.header}>Shelters</Text>
+      <Text style={styles.header}>{name}</Text>
     </View>
   )
 }

@@ -30,7 +30,9 @@ export default function App() {
     <View style={styles.container}>
       <Header />
       <Search />
-      <CategoryItem />
+      <CategoryItem name="Shelters" imageUrl={require("./src/assets/images/shelter.png")}/>
+      <CategoryItem name="Cafes" imageUrl={require("./src/assets/images/cafe.png")}/>
+      <CategoryItem name="Other" imageUrl={require("./src/assets/images/other.png")}/>
       <StatusBar />
     </View>
   )
