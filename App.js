@@ -20,48 +20,55 @@
 // });
 
 import { StatusBar } from "expo-status-bar"
+import { useState } from "react"
 import { View, Text, StyleSheet, FlatList } from "react-native"
 import Header from "./src/components/Header"
 import Search from "./src/components/Search"
 import CategoryItem from "./src/components/CategoryItem"
 
-const commonCategories = [
-  {
-    name: "Shelters",
-    imageUrl: require("./src/assets/images/shelter.png")
-  },
-  {
-    name: "Pet Cafes",
-    imageUrl: require("./src/assets/images/cafe.png")
-  },
-  {
-    name: "Other",
-    imageUrl: require("./src/assets/images/other.png")
-  },
-]
+
 
 export default function App() {
+  const [term, setTerm] = useState("Shelters")
+  const commonCategories = [
+    {
+      name: "Shelters",
+      imageUrl: require("./src/assets/images/shelter.png")
+    },
+    {
+      name: "Pet Cafes",
+      imageUrl: require("./src/assets/images/cafe.png")
+    },
+    {
+      name: "Other",
+      imageUrl: require("./src/assets/images/other.png")
+    },
+  ]
+
   return (
-    <View style={styles.container}>
-      <Header />
-      <Search />
-      {/* <CategoryItem name="Shelters" imageUrl={require("./src/assets/images/shelter.png")}/> */}
-      <FlatList 
-        data={commonCategories}
-        renderItem={({item, idx})=>{ //extract index from list
-          return(
-            <CategoryItem 
-              name={item.name} 
-              imageUrl={item.imageUrl} 
-              index={idx}/> //Able to be used in CatgegoryItem component
-          )
-        }}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={(category)=> category.name}
-      />
-      <StatusBar />
-    </View>
+      <View style={styles.container}>
+        <Header />
+        <Search />
+        {/* <CategoryItem name="Shelters" imageUrl={require("./src/assets/images/shelter.png")}/> */}
+        <FlatList 
+          data={commonCategories}
+          renderItem={({item, idx})=>{ //extract index from list
+            return(
+              <CategoryItem  //Props to be used in CatgegoryItem component
+                name={item.name} 
+                imageUrl={item.imageUrl} 
+                index={idx}
+                active={item.name === term}
+                handlePress={()=> setTerm(item.name)}
+                />
+            )
+          }}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={(category)=> category.name}
+        />
+        <StatusBar />
+      </View>
   )
 }
 
