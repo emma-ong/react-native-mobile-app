@@ -1,8 +1,10 @@
 import { Text, View, StyleSheet, Image } from "react-native" 
 import { elevation } from "../common/styles"
 
-export default function CategoryItem({name, imageUrl}) {
+export default function CategoryItem({name, imageUrl, index}) {
   return(
+    // If items > 3, use this to align items 
+    // <View style={[styles.container, styles.elevation, index === 0 ? {marginLeft: 25} : {marginLeft: 25}]}> 
     <View style={[styles.container, styles.elevation]}>
       <View style={styles.imageContainer}>
       <Image source={imageUrl} style={styles.image} />
@@ -18,11 +20,13 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 50,
     marginVertical: 15,
-    marginHorizontal: 18,
+    marginLeft: 25,
     // backgroundColor: "rgb(241,186,87)",
     backgroundColor: "white",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    shadowColor: "black",
+    shadowOffset: {width: 5, height: 5},
   },
   elevation,
   image: {

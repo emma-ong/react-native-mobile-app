@@ -48,9 +48,12 @@ export default function App() {
       {/* <CategoryItem name="Shelters" imageUrl={require("./src/assets/images/shelter.png")}/> */}
       <FlatList 
         data={commonCategories}
-        renderItem={({item})=>{
+        renderItem={({item, idx})=>{ //extract index from list
           return(
-            <CategoryItem name={item.name} imageUrl={item.imageUrl}/>
+            <CategoryItem 
+              name={item.name} 
+              imageUrl={item.imageUrl} 
+              index={idx}/> //Able to be used in CatgegoryItem component
           )
         }}
         horizontal
