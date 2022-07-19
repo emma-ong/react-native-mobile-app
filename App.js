@@ -25,7 +25,7 @@ import { View, Text, StyleSheet } from "react-native"
 import Header from "./src/components/Header"
 import Search from "./src/components/Search"
 import Categories from "./src/components/Categories"
-
+import Pets from "./src/components/Pets"
 
 export default function App() {
   const [term, setTerm] = useState("Shelters")
@@ -56,6 +56,7 @@ export default function App() {
           term={term}
         />
         <StatusBar />
+        <Pets />
       </View>
   )
 }
