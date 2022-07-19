@@ -48,7 +48,10 @@ export default function App() {
   return (
       <View style={styles.container}>
         <Header />
-        <Search />
+        <Search 
+          setTerm={setTerm}
+          
+        />
         {/* <CategoryItem name="Shelters" imageUrl={require("./src/assets/images/shelter.png")}/> */}
         <FlatList 
           data={commonCategories}
