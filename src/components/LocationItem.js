@@ -1,9 +1,13 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { elevation } from '../common/styles';
+import {withNavigation} from "react-navigation"
 
-export default function LocationItem({location}) {
-console.log(location.name, location.image_url)
+function LocationItem({location, navigation}) {
   return (
+    //Pets now has access to data in id object
+    <TouchableOpacity
+      onPress={(() => navigation.navigate("Pets", {id: location.id}))}
+    >
     <View style={[styles.elevation, styles.container]}>
       <Image  style={styles.image} source={!location.image_url? require("../assets/images/pets.png"):{uri: location.image_url}}/>
       <View style={styles.infoContainer}>
@@ -14,6 +18,7 @@ console.log(location.name, location.image_url)
           </View>
       </View>
     </View>
+    </TouchableOpacity>
   )
 }
 
@@ -55,3 +60,6 @@ const styles = StyleSheet.create({
   }
 
 })
+
+//gives access to navigation inside of prop
+export default withNavigation(LocationItem)

@@ -11,7 +11,7 @@ export default function Pets({term}) {
     searchPets(term)
   }, [term])
 
-  console.log({data: data, loading, error})
+  // console.log({data: data, loading, error})
 
   if(loading) return <ActivityIndicator size="large" marginVertical={30}/>
   if(error) return (
