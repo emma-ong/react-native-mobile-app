@@ -19,35 +19,33 @@ export default function Pets({term}) {
       <Text style={styles.heading}>Oops...an error occured!</Text>
     </View>
   )
-
   return(
 
     <View style={styles.container}>
-      <Text style={styles.heading}>Top Locations</Text>
+      <Text style={styles.header}>Top Locations</Text>
+
       <FlatList 
-        style={styles.flatlist}
         data={data}
         keyExtractor={(category)=> category.id}
-        renderItem={({item})=>{ 
-            return (
-              <LocationItem location={item}/>
-            )
-      }}
+        renderItem={({item}) => (
+          <LocationItem location={item}/>
+        )}
       />
     </View>
-
   )
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "white",
+    height: "55%",
     marginHorizontal: 25,
     marginVertical: 15,
-    // flex: 1,
   },
-  heading: {
+  header: {
     fontWeight: "bold",
     fontSize: 20,
+    // paddingBottom: 10
   },
 })
 
