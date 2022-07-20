@@ -1,6 +1,10 @@
 import {StyleSheet, View, Text} from 'react-native'
+import usePets from "../hooks/usePets"
 
 export default function Pets() {
+
+  const [{data, loading, error}, searchPets] = usePets()
+
   return(
 
     <View style={styles.container}>

@@ -1,6 +1,7 @@
-import {useState} from "react-"
+import {useState} from "react"
 
 export default () => {
+
   const [results, setResults] = useState({
     data: null,
     loading: false,
@@ -38,8 +39,7 @@ export default () => {
         error: "Something went wrong!"
       })
     }
-    //return values below in an array to have the same structure of useState
-    return [results, searchRestaurants]
-
   }
+  //return values below in an array to have the same structure of useState
+  return [results, searchPets]
 }
