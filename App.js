@@ -56,7 +56,9 @@ export default function App() {
           term={term}
         />
         <StatusBar />
-        <Pets />
+        <Pets 
+          term={term}
+        />
       </View>
   )
 }

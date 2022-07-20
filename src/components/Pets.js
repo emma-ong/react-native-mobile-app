@@ -1,9 +1,17 @@
 import {StyleSheet, View, Text} from 'react-native'
+import {useEffect} from 'react'
 import usePets from "../hooks/usePets"
 
-export default function Pets() {
+export default function Pets({term}) {
 
   const [{data, loading, error}, searchPets] = usePets()
+
+  useEffect(() => {
+    searchPets(term)
+  }, [term])
+
+  console.log({data: data, loading, error})
+
 
   return(
 

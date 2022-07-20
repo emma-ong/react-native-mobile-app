@@ -1,4 +1,5 @@
 import {useState} from "react"
+import yelp from "../api/yelp"
 
 export default () => {
 
@@ -19,7 +20,7 @@ export default () => {
     try {
       const response = await yelp.get('/search', {
         params: {
-          limit: 15,
+          limit: 1,
           term,
           location: "Kuala Lumpur"
         }
@@ -36,7 +37,7 @@ export default () => {
       setResults({
         data: null,
         loading: false,
-        error: "Something went wrong!"
+        error: error
       })
     }
   }
