@@ -38,14 +38,14 @@ export default function Pets({term}) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
-    height: "55%",
+    height: "57%",
     marginHorizontal: 25,
     marginVertical: 15,
   },
   header: {
     fontWeight: "bold",
     fontSize: 20,
-    // paddingBottom: 10
+    paddingBottom: 10
   },
 })
 

@@ -6,11 +6,11 @@ console.log(location.name, location.image_url)
   return (
     <View style={[styles.elevation, styles.container]}>
       <Image  style={styles.image} source={!location.image_url? require("../assets/images/pets.png"):{uri: location.image_url}}/>
-      <View style={styles.container2}>
-          <Text style={styles.text}>{location.name}</Text>
-          <View>
-              <Text>{location.rating}</Text>
-              <Text>{location.is_closed ? "🔴 Closed now" : "🟢 Open now"}</Text>
+      <View style={styles.infoContainer}>
+          <Text style={styles.header}>{location.name}</Text>
+          <View style={styles.info}>
+              <Text style={styles.rating}>Rating: {location.rating}</Text>
+              <Text style={styles.city}>{location.location.city}</Text>
           </View>
       </View>
     </View>
@@ -34,12 +34,24 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginLeft: 10,
   },
-  container2: {
-    marginLeft: 5,
-    marginRight: 100,
+  infoContainer: {
+    flex:1,
+    paddingHorizontal: 10,
     
   },
-  text: {
+  header: {
+    fontSize: 18,
     fontWeight: "bold",
+    marginBottom: 4,
+  },
+  info: {
+    flexDirection: "row",
+  },
+  rating: {
+    marginRight: 20,
+  },
+  city:{
+    color: "blue"
   }
+
 })
