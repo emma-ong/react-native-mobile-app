@@ -39,8 +39,8 @@ export default function App() {
       imageUrl: require("./src/assets/images/cafe.png")
     },
     {
-      name: "Other",
-      imageUrl: require("./src/assets/images/other.png")
+      name: "Pets",
+      imageUrl: require("./src/assets/images/pets.png")
     },
   ]
 
@@ -65,8 +65,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   // container: {
-  //   flex: 1,
-  //   backgroundColor: "#fff",
+    flex: 1,
+    backgroundColor: "rgb(253,253,253)",
   //   alignItems: "center",
   //   justifyContent: "center"
   // }

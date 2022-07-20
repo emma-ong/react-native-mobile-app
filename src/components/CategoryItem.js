@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     width: 90,
     height: 100,
     borderRadius: 50,
-    marginVertical: 15,
+    marginVertical: 10,
     marginLeft: 25,
     // backgroundColor: "rgb(241,186,87)",
     backgroundColor: "white",
@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     shadowColor: "black",
     shadowOffset: {width: 5, height: 5},
+    
   },
   elevation,
   image: {
