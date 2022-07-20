@@ -31,8 +31,8 @@ export default function App() {
   const [term, setTerm] = useState("Shelters")
   const commonCategories = [
     {
-      name: "Shelters",
-      imageUrl: require("./src/assets/images/shelter.png")
+      name: "Pet Stores",
+      imageUrl: require("./src/assets/images/stores.png")
     },
     {
       name: "Pet Cafes",

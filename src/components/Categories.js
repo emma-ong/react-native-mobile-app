@@ -4,18 +4,6 @@ import yelp from "../api/yelp"
 
 export default function Categories({categories, term, setTerm }) {
 
-  const searchPets = async () => {
-    const response = await yelp.get('/search', {
-      params: {
-        limit: 15,
-        term: "Pets",
-        location: "Kuala Lumpur"
-      }
-    })
-    console.log(response)
-  }
-searchPets()
-
   return (
     // <CategoryItem name="Shelters" imageUrl={require("./src/assets/images/shelter.png")}/>
     <FlatList 
